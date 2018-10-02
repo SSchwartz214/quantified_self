@@ -7,5 +7,9 @@ describe "Foods API" do
     get '/api/v1/foods'
 
     expect(response).to be_successful
+
+    foods = JSON.parse(body)
+
+    expect(foods.count).to eq(3)
   end
 end
