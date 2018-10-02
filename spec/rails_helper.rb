@@ -12,8 +12,6 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'database_cleaner'
-DatabaseCleaner.strategy = :truncation# Add additional requires below this line. Rails is not loaded until this point!
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -59,7 +57,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
   end
   
