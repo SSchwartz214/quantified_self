@@ -13,7 +13,21 @@ class Api::V1::FoodsController < ApplicationController
     end
 
     def create 
-        render json: Food.create(food_params)
+        food = Food.create(food_params)
+        if food.save
+            render json: food
+        else
+            render status: 400
+        end
+    end
+
+    def update
+        food = Food.find(params[:id])
+        if food.update(food_params) && (food_params[:name] || food_params[:calories])
+            render json: food
+        else
+            render status: 400
+        end
     end
 
 private

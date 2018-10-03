@@ -44,4 +44,34 @@ describe "Foods API" do
     expect(response).to be_successful
     expect(food.name).to eq(food_params[:name])
   end
+
+  it "returns a 400 if the food is not successfully created" do
+    food_params = { name: "carrot" }
+
+    post "/api/v1/foods", params: {food: food_params}
+
+    expect(response.status).to eq(400)
+  end
+
+  it "can update an existing food" do
+    id = Food.last.id
+    previous_name = Food.last.name
+    food_params = { name: "cheese" }
+    patch "/api/v1/foods/#{id}", params: {food: food_params}
+    food = Food.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(food.name).to_not eq(previous_name)
+    expect(food.name).to eq("cheese")
+  end
+
+  it "returns a 400 if the food is not successfully updated" do
+    id = Food.last.id
+    previous_name = Food.last.name
+    food_params = { color: "green" }
+    patch "/api/v1/foods/#{id}", params: {food: food_params}
+    food = Food.find_by(id: id)
+
+    expect(response.status).to eq(400)
+  end
 end
