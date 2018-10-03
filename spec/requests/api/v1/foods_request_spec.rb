@@ -16,7 +16,7 @@ describe "Foods API" do
     expect(foods.count).to eq(3)
   end
 
-  it "can get one food item by its id" do
+  it "can get one food by its id" do
     id = Food.first.id
 
     get "/api/v1/foods/#{id}"
@@ -32,5 +32,16 @@ describe "Foods API" do
     get "/api/v1/foods/4"
 
     expect(response.status).to eq(404)
+  end
+
+  it "can create a new food" do
+    food_params = { name: "carrot", calories: 100}
+
+    post "/api/v1/foods", params: {food: food_params}
+    food = Food.last
+
+    assert_response :success
+    expect(response).to be_successful
+    expect(food.name).to eq(food_params[:name])
   end
 end
