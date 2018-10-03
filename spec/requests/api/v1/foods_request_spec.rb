@@ -56,7 +56,7 @@ describe "Foods API" do
   it "can update an existing food" do
     id = Food.last.id
     previous_name = Food.last.name
-    food_params = { name: "cheese" }
+    food_params = { name: "cheese", calories: 150 }
     patch "/api/v1/foods/#{id}", params: {food: food_params}
     food = Food.find_by(id: id)
 

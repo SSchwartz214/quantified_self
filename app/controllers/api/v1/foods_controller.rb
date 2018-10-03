@@ -23,7 +23,7 @@ class Api::V1::FoodsController < ApplicationController
 
     def update
         food = Food.find(params[:id])
-        if food.update(food_params) && (food_params[:name] || food_params[:calories])
+        if food.update(food_params) && (food_params[:name] && food_params[:calories])
             render json: food
         else
             render status: 400
