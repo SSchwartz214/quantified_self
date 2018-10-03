@@ -8,7 +8,7 @@ RSpec.describe Food, type: :model do
   end
 
   it "has attributes" do
-    banana = create(:food)
+    banana = Food.create(name: "Banana", calories: 150)
 
     expect(banana.name).to eq("Banana")
     expect(banana.calories).to eq(150)
