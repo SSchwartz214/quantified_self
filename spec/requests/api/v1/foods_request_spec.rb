@@ -74,4 +74,25 @@ describe "Foods API" do
 
     expect(response.status).to eq(400)
   end
+
+  it "can destroy a food" do
+    food = Food.last
+
+    expect(Food.count).to eq(3)
+  
+    delete "/api/v1/foods/#{food.id}"
+  
+    expect(response.status).to eq(204)
+    expect(Food.count).to eq(2)
+    expect{Food.find(food.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
+
+  it "returns a 400 if the food can't be found to destroy" do
+
+    expect(Food.count).to eq(3)
+  
+    delete "/api/v1/foods/4"
+  
+    expect(response.status).to eq(400)
+  end
 end
