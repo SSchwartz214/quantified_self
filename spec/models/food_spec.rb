@@ -13,4 +13,9 @@ RSpec.describe Food, type: :model do
     expect(banana.name).to eq("Banana")
     expect(banana.calories).to eq(150)
   end
+
+  context "validations" do
+    it {should validate_presence_of :name}
+    it {should validate_presence_of :calories}
+  end
 end
