@@ -26,7 +26,7 @@ $ rake db:{create,migrate,seed}
 * To view locally:
 ```
 $ rails s
-visit localhost:3000 in your browser
+visit 'localhost:3000' in your browser
 ```
 
 * How to run the test suite
