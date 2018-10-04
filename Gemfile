@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -18,7 +19,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'faker'
-  gem 'active_model_serializers'
 end
 
 group :development do
