@@ -45,8 +45,7 @@ https://intense-earth-98752.herokuapp.com/
 ```
 * GET /api/v1/foods
 ```
-    - Returns all foods currently in the database
-    
+   * Returns all foods currently in the database
 ```
 * GET /api/v1/foods/:id
 ```
