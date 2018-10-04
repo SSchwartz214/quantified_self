@@ -36,21 +36,31 @@ $ rspec
 
 * To view production version, visit:
 ```
-https://dashboard.heroku.com/apps/intense-earth-98752
+https://intense-earth-98752.herokuapp.com/
 ```
 
 ### Record Endpoints:
 
 #### Foods
+```
 * GET /api/v1/foods
+```
     - Returns all foods currently in the database
+```
 * GET /api/v1/foods/:id
+```
     - Returns the food object with the specific :id you’ve passed in
+```
 * POST /api/v1/foods
+```
     - Allows creating a new food with the parameters
+```
 * PATCH /api/v1/foods/:id
+```
   - Allows one to update an existing food with the parameters
+```
 * DELETE /api/v1/foods/:id
+```
   - Will delete the food with the id passed in
 
 #### Meals
