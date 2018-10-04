@@ -46,6 +46,12 @@ https://young-sea-78798.herokuapp.com/
 GET /api/v1/foods
 ```
    * Returns all foods currently in the database
+   example: 
+   {
+    "id": 1,
+    "name": "Banana",
+    "calories": 150
+    },
 ```
 GET /api/v1/foods/:id
 ```
