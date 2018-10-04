@@ -45,37 +45,47 @@ https://intense-earth-98752.herokuapp.com/
 ```
 GET /api/v1/foods
 ```
-   ** Returns all foods currently in the database
+   * Returns all foods currently in the database
 ```
 GET /api/v1/foods/:id
 ```
-   ** Returns the food object with the specific :id you’ve passed in
+   * Returns the food object with the specific :id you’ve passed in
 ```
 * POST /api/v1/foods
 ```
-    - Allows creating a new food with the parameters
+   * Allows creating a new food with the parameters
 ```
 * PATCH /api/v1/foods/:id
 ```
-  - Allows one to update an existing food with the parameters
+  * Allows one to update an existing food with the parameters
 ```
 * DELETE /api/v1/foods/:id
 ```
-  - Will delete the food with the id passed in
+  * Will delete the food with the id passed in
 
 #### Meals
-* GET /api/v1/meals
-    - Returns all the meals in the database along with their associated foods
-* GET /api/v1/meals/:meal_id/foods
-    - Returns all the foods associated with the meal with an id specified by :meal_id
-* POST /api/v1/meals/:meal_id/foods/:id
-    - Adds the food with :id to the meal with :meal_id
-* DELETE /api/v1/meals/:meal_id/foods/:id
-    - Removes the food with :id from the meal with :meal_id
+```
+GET /api/v1/meals
+```
+   * Returns all the meals in the database along with their associated foods
+```
+GET /api/v1/meals/:meal_id/foods
+```
+   * Returns all the foods associated with the meal with an id specified by :meal_id
+```
+POST /api/v1/meals/:meal_id/foods/:id
+```
+   * Adds the food with :id to the meal with :meal_id
+```
+DELETE /api/v1/meals/:meal_id/foods/:id
+```
+   * Removes the food with :id from the meal with :meal_id
 
 #### Favorite Foods
+```
 * GET /api/v1/favorite_foods
-  - Retrieves data on the foods which were eaten most frequently.
+```
+  * Retrieves data on the foods which were eaten most frequently.
 
 #### Questions or comments?
 
