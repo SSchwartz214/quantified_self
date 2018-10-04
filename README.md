@@ -46,9 +46,11 @@ https://intense-earth-98752.herokuapp.com/
 * GET /api/v1/foods
 ```
     - Returns all foods currently in the database
+    
 ```
 * GET /api/v1/foods/:id
 ```
+
     - Returns the food object with the specific :id you’ve passed in
 ```
 * POST /api/v1/foods
