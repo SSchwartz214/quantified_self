@@ -46,8 +46,8 @@ https://young-sea-78798.herokuapp.com/
 GET /api/v1/foods
 ```
    * Returns all foods currently in the database<br/>
-   example: 
-   {
+   example:<br/>
+   {<br/>
     "id": 1,<br/>
     "name": "Banana",<br/>
     "calories": 150<br/>
@@ -60,19 +60,19 @@ GET /api/v1/foods
 ```
 GET /api/v1/foods/:id
 ```
-   * Returns the food object with the specific :id you’ve passed in
-   example: 
-   {
-    "id": 1,
-    "name": "Banana",
-    "calories": 150
-    }
+   * Returns the food object with the specific :id you’ve passed in<br/>
+   example:<br/>
+   {<br/>
+    "id": 1,<br/>
+    "name": "Banana",<br/>
+    "calories": 150<br/>
+    }<br/>
 ```
 POST /api/v1/foods
 ```
-   * Allows creating a new food with the parameters
-   example parameters:
-   { "food": { "name": "Name of food here", "calories": "Calories here"} }
+   * Allows creating a new food with the parameters<br/>
+   example parameters:<br/>
+   { "food": { "name": "Name of food here", "calories": "Calories here"} }<br/>
 ```
 PATCH /api/v1/foods/:id
 ```
