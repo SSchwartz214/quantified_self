@@ -175,7 +175,7 @@ GET /api/v1/favorite_foods
   * Retrieves data on the foods which were eaten most frequently.<br/>
   example:<br/>
   [<br/>
-  {v
+  {<br/>
     "timesEaten": 4,<br/>
     "foods":<br/>
       [<br/>
