@@ -51,15 +51,15 @@ GET /api/v1/foods/:id
 ```
    * Returns the food object with the specific :id you’ve passed in
 ```
-* POST /api/v1/foods
+POST /api/v1/foods
 ```
    * Allows creating a new food with the parameters
 ```
-* PATCH /api/v1/foods/:id
+PATCH /api/v1/foods/:id
 ```
   * Allows one to update an existing food with the parameters
 ```
-* DELETE /api/v1/foods/:id
+DELETE /api/v1/foods/:id
 ```
   * Will delete the food with the id passed in
 
@@ -83,7 +83,7 @@ DELETE /api/v1/meals/:meal_id/foods/:id
 
 #### Favorite Foods
 ```
-* GET /api/v1/favorite_foods
+GET /api/v1/favorite_foods
 ```
   * Retrieves data on the foods which were eaten most frequently.
 
