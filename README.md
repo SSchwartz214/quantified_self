@@ -52,18 +52,33 @@ GET /api/v1/foods
     "name": "Banana",
     "calories": 150
     },
+    {
+    "id": 2,
+    "name": "Chicken",
+    "calories": 250
+    },
 ```
 GET /api/v1/foods/:id
 ```
    * Returns the food object with the specific :id you’ve passed in
+   example: 
+   {
+    "id": 1,
+    "name": "Banana",
+    "calories": 150
+    }
 ```
 POST /api/v1/foods
 ```
    * Allows creating a new food with the parameters
+   example parameters:
+   { "food": { "name": "Name of food here", "calories": "Calories here"} }
 ```
 PATCH /api/v1/foods/:id
 ```
   * Allows one to update an existing food with the parameters
+  example parameters:
+  { "food": { "name": "Mint", "calories": "14"} }
 ```
 DELETE /api/v1/foods/:id
 ```
