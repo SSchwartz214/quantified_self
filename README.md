@@ -77,7 +77,7 @@ POST /api/v1/foods
 PATCH /api/v1/foods/:id
 ```
   * Allows one to update an existing food with the parameters
-  example parameters:
+  example parameters:<br/>
   { "food": { "name": "Mint", "calories": "14"} }
 ```
 DELETE /api/v1/foods/:id
