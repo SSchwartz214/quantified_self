@@ -45,18 +45,18 @@ https://young-sea-78798.herokuapp.com/
 ```
 GET /api/v1/foods
 ```
-   * Returns all foods currently in the database
+   * Returns all foods currently in the database<br/>
    example: 
    {
-    "id": 1,
-    "name": "Banana",
-    "calories": 150
-    },
-    {
-    "id": 2,
-    "name": "Chicken",
-    "calories": 250
-    },
+    "id": 1,<br/>
+    "name": "Banana",<br/>
+    "calories": 150<br/>
+    },<br/>
+    {<br/>
+    "id": 2,<br/>
+    "name": "Chicken",<br/>
+    "calories": 250<br/>
+    },<br/>
 ```
 GET /api/v1/foods/:id
 ```
