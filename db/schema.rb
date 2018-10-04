@@ -18,23 +18,17 @@ ActiveRecord::Schema.define(version: 2018_10_04_015755) do
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.integer "calories"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "meal_foods", force: :cascade do |t|
     t.bigint "meal_id"
     t.bigint "food_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_meal_foods_on_food_id"
     t.index ["meal_id"], name: "index_meal_foods_on_meal_id"
   end
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "meal_foods", "foods"

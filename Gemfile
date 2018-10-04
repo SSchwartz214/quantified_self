@@ -18,6 +18,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'faker'
+  gem 'active_model_serializers'
 end
 
 group :development do
