@@ -76,7 +76,7 @@ POST /api/v1/foods
 ```
 PATCH /api/v1/foods/:id
 ```
-  * Allows one to update an existing food with the parameters
+  * Allows one to update an existing food with the parameters<br/>
   example parameters:<br/>
   { "food": { "name": "Mint", "calories": "14"} }
 ```
@@ -88,11 +88,77 @@ DELETE /api/v1/foods/:id
 ```
 GET /api/v1/meals
 ```
-   * Returns all the meals in the database along with their associated foods
+   * Returns all the meals in the database along with their associated foodsexample:<br>
+   example:<br/>
+   [<br/>
+    {<br/>
+        "id": 1,<br/>
+        "name": "Breakfast",<br/>
+        "foods": [<br/>
+            {<br/>
+                "id": 1,<br/>
+                "name": "Banana",<br/>
+                "calories": 150<br/>
+            },<br/>
+            {<br/>
+                "id": 6,<br/>
+                "name": "Yogurt",<br/>
+                "calories": 550<br/>
+            },<br/>
+            {<br/>
+                "id": 12,<br/>
+                "name": "Apple",<br/>
+                "calories": 220<br/>
+            }<br/>
+        ]<br/>
+    },<br/>
+    {<br/>
+        "id": 2,<br/>
+        "name": "Snack",<br/>
+        "foods": [<br/>
+            {<br/>
+                "id": 1,<br/>
+                "name": "Banana",<br/>
+                "calories": 150<br/>
+            },<br/>
+            {<br/>
+                "id": 9,<br/>
+                "name": "Gum",<br/>
+                "calories": 50<br/>
+            },<br/>
+            {<br/>
+                "id": 10,<br/>
+                "name": "Cheese",<br/>
+                "calories": 400<br/>
+            }<br/>
+        ]<br/>
+    },<br/>
 ```
 GET /api/v1/meals/:meal_id/foods
 ```
-   * Returns all the foods associated with the meal with an id specified by :meal_id
+   * Returns all the foods associated with the meal with an id specified by :meal_id<br/>
+   example:<br/>
+   {<br/>
+    "id": 1,<br/>
+    "name": "Breakfast",<br/>
+    "foods": [<br/>
+        {<br/>
+            "id": 1,<br/>
+            "name": "Banana",<br/>
+            "calories": 150<br/>
+        },<br/>
+        {<br/>
+            "id": 6,<br/>
+            "name": "Yogurt",<br/>
+            "calories": 550<br/>
+        },<br/>
+        {<br/>
+            "id": 12,<br/>
+            "name": "Apple",<br/>
+            "calories": 220<br/>
+        }<br/>
+    ]<br/>
+}<br/>
 ```
 POST /api/v1/meals/:meal_id/foods/:id
 ```
@@ -106,7 +172,19 @@ DELETE /api/v1/meals/:meal_id/foods/:id
 ```
 GET /api/v1/favorite_foods
 ```
-  * Retrieves data on the foods which were eaten most frequently.
+  * Retrieves data on the foods which were eaten most frequently.<br/>
+  example:<br/>
+  [<br/>
+  {v
+    "timesEaten": 4,<br/>
+    "foods":<br/>
+      [<br/>
+        {<br/>
+          "name": "Banana",<br/>
+          "calories": 200,<br/>
+          "mealsWhenEaten": ["Breakfast", "Dinner"]<br/>
+        },<br/>
+  },
 
 #### Questions or comments?
 
