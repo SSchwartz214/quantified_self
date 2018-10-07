@@ -43,4 +43,23 @@ describe "Meals API" do
 
     expect(response.status).to eq(404)
   end
+
+  it "Adds the food with :id to the meal with :meal_id" do
+    count = MealFood.count
+    meal_id = Meal.first.id
+    meal_name = Meal.first.name
+    id = Food.last.id
+    food_name = Food.last.name
+
+    post "/api/v1/meals/#{meal_id}/foods/#{id}"
+
+    assert_response :success
+  
+    expect(MealFood.count).to eq(count + 1)
+    expect(MealFood.last.food_id).to eq(id)
+    expect(MealFood.last.meal_id).to eq(meal_id)
+    expect(response.status).to eq(201)
+    expect(JSON.parse(response.body)["message"]).to eq("Successfully added #{food_name} to #{meal_name}")
+  end
+
 end
