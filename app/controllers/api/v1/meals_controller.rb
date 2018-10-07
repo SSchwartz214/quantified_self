@@ -17,9 +17,13 @@ class Api::V1::MealsController < ApplicationController
         food = Food.find_by(id: params[:id])
 
         MealFood.create(meal: meal, food: food)
-        render status: 201, json: {
-                message: "Successfully added #{food.name} to #{meal.name}"
-        }.to_json    
+        if meal && food
+            render status: 201, json: {
+                    message: "Successfully added #{food.name} to #{meal.name}"
+            }.to_json   
+        else
+            render status: 404
+        end 
     end
 
 private 

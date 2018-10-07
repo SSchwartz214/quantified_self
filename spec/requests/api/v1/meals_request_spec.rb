@@ -62,4 +62,15 @@ describe "Meals API" do
     expect(JSON.parse(response.body)["message"]).to eq("Successfully added #{food_name} to #{meal_name}")
   end
 
+  it "returns a 404 if the meal/food cannot be found" do
+    count = MealFood.count
+    meal_id = 4
+    meal_name = Meal.first.name
+    id = Food.last.id
+
+    post "/api/v1/meals/#{meal_id}/foods/#{id}"
+  
+    expect(response.status).to eq(404)
+    expect(MealFood.count).to eq(count)
+  end
 end
