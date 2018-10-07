@@ -87,12 +87,12 @@ describe "Foods API" do
     expect{Food.find(food.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
 
-  it "returns a 400 if the food can't be found to destroy" do
+  it "returns a 404 if the food can't be found to destroy" do
 
     expect(Food.count).to eq(3)
   
     delete "/api/v1/foods/4"
   
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(404)
   end
 end

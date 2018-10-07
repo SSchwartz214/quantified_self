@@ -36,7 +36,7 @@ class Api::V1::FoodsController < ApplicationController
             food.destroy 
             render status: 204
         else
-            render status:400
+            render status:404
         end
     end
 

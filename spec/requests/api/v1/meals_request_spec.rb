@@ -62,7 +62,7 @@ describe "Meals API" do
     expect(JSON.parse(response.body)["message"]).to eq("Successfully added #{food_name} to #{meal_name}")
   end
 
-  it "returns a 404 if the meal/food cannot be found" do
+  it "returns a 404 if the meal cannot be found" do
     count = MealFood.count
     meal_id = 4
     meal_name = Meal.first.name
@@ -70,6 +70,53 @@ describe "Meals API" do
 
     post "/api/v1/meals/#{meal_id}/foods/#{id}"
   
+    expect(response.status).to eq(404)
+    expect(MealFood.count).to eq(count)
+  end
+
+  it "returns a 404 if the food cannot be found" do
+    count = MealFood.count
+    meal_id = Meal.first.id
+    meal_name = Meal.first.name
+    id = 7
+
+    post "/api/v1/meals/#{meal_id}/foods/#{id}"
+  
+    expect(response.status).to eq(404)
+    expect(MealFood.count).to eq(count)
+  end
+
+  it "can destroy a record from the MealFood table" do
+    count = MealFood.count
+    meal_id = Meal.first.id
+    meal_food = Meal.first
+    meal_name = Meal.first.name
+    id = Food.first.id
+    food_name = Food.first.name
+
+    delete "/api/v1/meals/#{meal_id}/foods/#{id}"
+
+    expect(MealFood.count).to eq(count - 1)
+    expect(JSON.parse(response.body)["message"]).to eq("Successfully removed #{food_name} from #{meal_name}")
+    expect{MealFood.find(meal_food.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
+
+  it "returns a 404 if the food can't be found to destroy" do
+    count = MealFood.count
+    meal_id = Meal.first.id
+   
+    delete "/api/v1/meals/#{meal_id}/foods/7"
+
+    expect(response.status).to eq(404)
+    expect(MealFood.count).to eq(count)
+  end
+
+  it "returns a 404 if the meal can't be found to destroy" do
+    count = MealFood.count
+    meal_id = 4
+   
+    delete "/api/v1/meals/#{meal_id}/foods/1"
+
     expect(response.status).to eq(404)
     expect(MealFood.count).to eq(count)
   end
