@@ -29,6 +29,16 @@ $ rails s
 visit 'localhost:3000' in your browser
 ```
 
+* To view with Docker:
+```
+ in 'config/database.yml' uncomment lines 5-7
+   $ docker-compose up
+   $ docker-compose run web rake db:create
+   $ docker-compose run web rake db:migrate
+   $ docker-compose run web rake db:seed
+
+
+
 * How to run the test suite
 ```
 $ rspec
