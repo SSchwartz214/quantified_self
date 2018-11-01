@@ -1,5 +1,3 @@
-# README
-
 ### Quantified Self
 
 #### Description
